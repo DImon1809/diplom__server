@@ -79,4 +79,10 @@ export class UserService {
 
     return token;
   }
+
+  current(token: string) {
+    const payload = this.jwtService.verify(token, 'supersecretkey');
+
+    return payload;
+  }
 }
